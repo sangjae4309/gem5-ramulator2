@@ -11,3 +11,4 @@
   - `./common/*` --> `gem5/configs/common`
   - `./ramulator2/Sconscript` --> `gem5/ext/ramulator2/ramulator2`
 - The detail explanation is available at [sangjae4309.github.io](https://sangjae4309.github.io/about/)
+- The example of configuration file and command is `./example`
