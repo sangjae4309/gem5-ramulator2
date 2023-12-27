@@ -211,7 +211,7 @@ Ramulator2::recvTimingReq(PacketPtr pkt)
     } else if (pkt->isWrite()) {
         // Generate ramulator WRITE request and try to send to ramulator's memory system
         enqueue_success = ramulator2_frontend->
-            receive_external_requests(1, pkt->getAddr(), pkt->req->contextId(), 
+            receive_external_requests(1, pkt->getAddr(), 0, 
             [this](Ramulator::Request& req) {
                 DPRINTF(Ramulator2, "Write to %ld completed.\n", req.addr);
                 auto& pkt_q = outstandingWrites.find(req.addr)->second;
