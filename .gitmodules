@@ -1,7 +1,7 @@
 [submodule "gem5"]
-    path = gem5
-    url = https://github.com/gem5/gem5
+	path = gem5
+	url = https://github.com/gem5/gem5
 
 [submodule "ramulator2"]
-    path = ramulator2
-    url = https://github.com/CMU-SAFARI/ramulator2
+	path = ramulator2
+	url = https://github.com/CMU-SAFARI/ramulator2.git
