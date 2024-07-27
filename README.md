@@ -1,14 +1,26 @@
-## Enviorment
-- \>= Ubuntu22.04 (due to support on c++23)
-- c++-12 (apt-get install c++-12)
-- clang++-15 (apt-get install clang clang++-15)
-- cmake
-- gem5 ver.230830
+This repository distributes a enviorment that integrates gem5 and ramulator2.
 
-## Guide
-- move files as follows:
-  - `./mem/*` --> `gem5/src/mem`
-  - `./common/*` --> `gem5/configs/common`
-  - `./ramulator2_tmp/Sconscript` --> `gem5/ext/ramulator2/ramulator2`
-- The detail explanation is available at [docs_ramulator2](https://sangjae4309.github.io/docs_ramulator2/index.html)
-- The example of configuration file and command is `./example`
+The repository contains following contents and files
+
+- `mem/`: contains a ramulator2 wrapper and config file. transfer files to `gem5/src/mem`
+- `common/`: contains a option file. transfer files to `gem5/configs/common`
+- `ramulator2_tmp/`: contains a Sconscript to include ramultor2 in compiling. transfer files to `gem5/ext/ramulator2/
+- `example/`: example scripts to run gem5.
+- example/mcf_only_4core_example.cmd shows an example of running mcf, one of benchmark in SPEC2006.
+- The detail explanation about what the files do is exaplained in [integrating ramulator2 page](https://sangjae4309.github.io/docs-gem5/external_simulator/ramulator2).
+
+## Enviorment
+- Because ramualtor2 is based on c++23, the following enviorment is required
+   - Ubuntu22.04
+   - c++-12 
+   - clang++-15 
+   - cmake
+   - gem5 version 23.0.1
+- For convienecie, We provide a `Dockerfile` which already builds alll necessary enviorements. Just run
+
+```
+docker build --tag gem5-ramulator2 .
+docker run -d -it --name gem5-ramulator2 gem5-ramulator2:latest
+docker exec -it gem5-ramulator2 /bin/bash
+```
+
