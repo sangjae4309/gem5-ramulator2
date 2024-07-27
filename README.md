@@ -1,4 +1,4 @@
-## Integrating gem5 + Ramualtor2
+## Integrating gem5 + Ramulator2
 
 This repository distributes a enviorment that integrates gem5 and ramulator2.
 The repository contains following contents and files
