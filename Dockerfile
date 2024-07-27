@@ -13,8 +13,8 @@ WORKDIR /root
 RUN apt-get update 
 RUN apt-get install build-essential -y
 RUN apt-get install git -y
-#RUN apt-get install c++-12 -y
-#RUN apt-get install clang clang++-15 -y
+RUN apt-get install c++-12 -y
+RUN apt-get install clang clang++-15 -y
 
 RUN git clone https://github.com/sangjae4309/gem5-ramulator2.git /root/gem5-ramulator2
 RUN git clone https://github.com/gem5/gem5.git /root/gem5-ramulator2/gem5
