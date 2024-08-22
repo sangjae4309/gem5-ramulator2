@@ -3,9 +3,9 @@ LABEL creator="mainpower4309@gmail.com"
 LABEL version="1.0.0"
 
 ARG DEBIAN_FRONTEND=noninteractive
-ENV TZ America/New_York
-ENV PYTHONIOENCODING UTF-8
-ENV LC_CTYPE C.UTF-8
+ENV TZ=America/New_York
+ENV PYTHONIOENCODING=UTF-8
+ENV LC_CTYPE=C.UTF-8
 
 USER root
 WORKDIR /root
@@ -19,7 +19,7 @@ RUN apt-get install clang clang++-15 -y
 RUN git clone https://github.com/sangjae4309/gem5-ramulator2.git /root/gem5-ramulator2
 RUN git clone https://github.com/gem5/gem5.git /root/gem5-ramulator2/gem5
 RUN mkdir /root/gem5-ramulator2/gem5/ext/ramulator2 
-RUN git clone https://github.com/CMU-SAFARI/ramulator2.git /root/gem5-ramulator2/gem5/ext/ramulator/ramulator2
+RUN git clone https://github.com/CMU-SAFARI/ramulator2.git /root/gem5-ramulator2/gem5/ext/ramulator2/ramulator2
 
 
 RUN chmod -R 755 /root/gem5-ramulator2/mem/*
