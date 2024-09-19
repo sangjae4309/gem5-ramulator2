@@ -9,7 +9,7 @@ MemorySystem:
   DRAM:
     impl: DDR4
     org:
-      preset: DDR4_8Gb_x8
+      preset: DDR4_2Gb_x8
       channel: 1
       rank: 2
     timing:

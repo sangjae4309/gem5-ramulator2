@@ -25,13 +25,15 @@ RUN git clone https://github.com/CMU-SAFARI/ramulator2.git /root/gem5-ramulator2
 RUN cd /root/gem5-ramulator2/gem5/ext/ramulator2/ramulator2 && git reset --hard 0eafaa4c3df7b333f8645f1249afa52390c89616
 
 
-RUN chmod -R 755 /root/gem5-ramulator2/mem/*
-RUN chmod -R 755 /root/gem5-ramulator2/common/*
-RUN chmod -R 755 /root/gem5-ramulator2/ramulator2_tmp/SConscript 
+RUN chmod -R 755 /root/gem5-ramulator2/wrapper/mem/*
+RUN chmod -R 755 /root/gem5-ramulator2/wrapper/common/*
+RUN chmod -R 755 /root/gem5-ramulator2/wrapper/SConscript 
 
-RUN cp /root/gem5-ramulator2/mem/* /root/gem5-ramulator2/gem5/src/mem
-RUN cp /root/gem5-ramulator2/common/* /root/gem5-ramulator2/gem5/configs/common
-RUN cp /root/gem5-ramulator2/ramulator2_tmp/SConscript /root/gem5-ramulator2/gem5/ext/ramulator2
+RUN cp /root/gem5-ramulator2/wrapper/mem/* /root/gem5-ramulator2/gem5/src/mem
+RUN cp /root/gem5-ramulator2/wrapper/common/* /root/gem5-ramulator2/gem5/configs/common
+RUN cp /root/gem5-ramulator2/wrapper/SConscript /root/gem5-ramulator2/gem5/ext/ramulator2
+RUN cp /root/gem5-ramulator2/wrapper/python/SConscript /root/gem5-ramulator2/gem5/src/python/
+RUN cp /root/gem5-ramulator2/wrapper/python/ramulator_2.py /root/gem5-ramulator2/gem5/src/python/gem5/components/memory
 
 
 
