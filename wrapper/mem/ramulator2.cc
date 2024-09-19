@@ -69,10 +69,10 @@ void
 Ramulator2::startup()
 {
     startTick = curTick();
-
-    // kick off the clock ticks
-    schedule(tickEvent, clockEdge());
-}
+    DPRINTF(Ramulator2, "startup and schedule tickEvent\n");
+    //kick off the clock ticks
+    //schedule(tickEvent, clockEdge());
+    schedule(tickEvent, 13121004000177);}
 
 void
 Ramulator2::resetStats() {
