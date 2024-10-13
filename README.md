@@ -20,8 +20,9 @@ First, you need base image provided from [gem5 official](https://www.gem5.org/do
 docker pull ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0
 ```
 
-Then build new docker images wit pre-defined `Dockerfile` (It takes a while to end) and execute the image
+Change directory to gloned repo and build docker images wit pre-defined `Dockerfile` (It takes a while to end) and execute the image
 ```
+cd gem5-ramulator2
 docker build --tag gem5-ramulator2 .
 docker run -d -it --name gem5-ramulator2 gem5-ramulator2:latest
 docker exec -it gem5-ramulator2 /bin/bash

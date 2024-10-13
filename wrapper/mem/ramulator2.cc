@@ -180,7 +180,7 @@ Ramulator2::recvTimingReq(PacketPtr pkt)
     {
         // Generate ramulator READ request and try to send to ramulator's memory system
         enqueue_success = ramulator2_frontend->
-            receive_external_requests(0, pkt->getAddr(), 0 
+            receive_external_requests(0, pkt->getAddr(), 0,
             [this](Ramulator::Request& req) {
                 DPRINTF(Ramulator2, "Read to %ld completed.\n", req.addr);
                 auto& pkt_q = outstandingReads.find(req.addr)->second;
